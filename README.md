@@ -6,8 +6,8 @@ progress, and a study calendar.
 
 ## Screenshots
 
-![Dashboard](screenshots/dashboard.png)
-![Calendar](screenshots/calendar.png)
+![Dashboard](Screenshots/dashboard.png)
+![Calendar](Screenshots/calendar.png)
 
 ## Features
 
