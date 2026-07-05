@@ -1,0 +1,74 @@
+.timer-section {
+  width: 360px;
+  flex-shrink: 0;
+  background-color: #241F2C;
+  border: 1px solid #313640;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+}
+
+.timer-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.subject-select {
+  background-color: #241F2C;
+  color: #F5F3FF;
+  border: 1px solid #313640;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.timer-display {
+  font-family: 'Sora', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.timer-btn {
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #2A2D35;
+  color: #F5F3FF;
+  border: 1px solid #313640;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.timer-btn:hover {
+  border-color: #E587A4;
+}
+
+.timer-btn--primary {
+  background: #E587A4;
+  border: none;
+}
+
+.timer-btn--primary:hover {
+  background: #D76D90;
+}
+
+.timer-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.timer-btn--primary:disabled {
+  opacity: 0.55;
+}

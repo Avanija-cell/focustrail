@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Streak & Focus Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/timer.css">
+  <link rel="stylesheet" href="css/heatmap.css">
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- TOP SECTION -->
+
+    <div class="top-layout">
+
+        <!-- LEFT SIDE -->
+        <main class="dashboard">
+
+            <h1 class="greeting">Good Evening 👋</h1>
+            <p class="subtext">Let's keep the streak alive.</p>
+
+            <div class="dashboard-cards">
+
+                <div class="card card--streak">
+                    <div class="card-label">🔥 Current Streak</div>
+                    <div class="card-value" id="streak-value">0 Days</div>
+                </div>
+
+                <div class="card card--study">
+                    <div class="card-label">Today's Study</div>
+                    <div class="card-value" id="today-value">0 hr 0 min</div>
+                </div>
+
+            </div>
+
+            <div class="card card--goal">
+
+                <div class="card-label">Weekly Goal</div>
+
+                <div class="card-value" id="goal-value">
+                    0 / 20 hrs
+                </div>
+
+                <div class="progress-bar-track">
+                    <div
+                        class="progress-bar-fill"
+                        id="goal-progress-fill">
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- RIGHT SIDE -->
+
+        <aside class="timer-section">
+
+            <h2 class="timer-title">Focus Timer</h2>
+
+            <select id="subject-select" class="subject-select">
+                <option value="DSA">DSA</option>
+                <option value="Java">Java</option>
+                <option value="DBMS">DBMS</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <div
+                class="timer-display"
+                id="timer-display">
+                25:00
+            </div>
+
+            <div class="timer-controls">
+
+                <button
+                    id="start-timer-btn"
+                    class="timer-btn timer-btn--primary">
+                    Start
+                </button>
+
+                <button
+                    id="pause-timer-btn"
+                    class="timer-btn">
+                    Pause
+                </button>
+
+                <button
+                    id="reset-timer-btn"
+                    class="timer-btn">
+                    Reset
+                </button>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+    <section class="bottom-layout">
+
+      <div class="card recent-card">
+
+        <div class="card-header">
+    
+          <h3>Recent Activity</h3>
+        
+        </div>
+    
+        <div id="recent-sessions">
+    
+            <p class="empty-state">
+                No study sessions yet.
+            </p>
+    
+        </div>
+    
+    </div>
+
+    <div class="card goal-card">
+
+      <h3>Today's Goal</h3>
+  
+      <div class="goal-progress-text">
+  
+          0 / 120 min
+  
+      </div>
+  
+      <div class="progress-bar-track">
+  
+          <div
+              class="progress-bar-fill"
+              id="daily-goal-fill">
+          </div>
+  
+      </div>
+  
+      <p class="goal-status">
+  
+          Start your first session today.
+  
+      </p>
+  
+  </div>
+
+    </section>
+
+    <!-- HEATMAP -->
+
+    <section class="heatmap-section">
+
+      <h2 class="heatmap-title">Study Calendar</h2>
+  
+      <div id="calendar-month" class="calendar-month"></div>
+  
+      <div class="calendar-weekdays">
+  
+          <span>Sun</span>
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+  
+      </div>
+  
+      <div
+          id="heatmap-grid"
+          class="calendar-grid">
+      </div>
+
+      <div class="calendar-legend">
+
+        <span>Study Intensity</span>
+    
+        <div class="legend-item">
+            <div class="legend-color level-0"></div>
+            <small>0 min</small>
+        </div>
+    
+        <div class="legend-item">
+            <div class="legend-color level-1"></div>
+            <small>1–29</small>
+        </div>
+    
+        <div class="legend-item">
+            <div class="legend-color level-2"></div>
+            <small>30–89</small>
+        </div>
+    
+        <div class="legend-item">
+            <div class="legend-color level-3"></div>
+            <small>90+</small>
+        </div>
+    
+    </div>
+  
+  </section>
+
+</div>
+
+<div id="toast" class="toast">
+    Session completed!
+</div>
+
+<button id="reset-data-btn" class="reset-data-btn">
+  Reset All Data
+</button>
+
+<script src="js/storage.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/recentSession.js"></script>
+<script src="js/heatmap.js"></script>
+<script src="js/reset.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

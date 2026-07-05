@@ -1,0 +1,151 @@
+.dashboard {
+  flex: 1;
+  padding: 0;
+}
+
+.greeting {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtext {
+  color: #A4A8B4;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+
+.card {
+  background: #22252D;
+  border: 1px solid #313640;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 16px;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #f580a5;
+}
+
+
+.card--streak {
+  border-top: 3px solid #aa4162;
+}
+
+.card--study {
+  border-top: 3px solid #aa4162;
+}
+
+.card--goal {
+  border-top: 3px solid #aa4162;
+}
+
+
+.card-label {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: #A4A8B4;
+  margin-bottom: 8px;
+}
+
+.card-value {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: clamp(24px, 3vw, 30px);
+}
+
+
+.progress-bar-track {
+  background: #343945;
+  height: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+.progress-bar-fill {
+  background: #e24174;
+  height: 100%;
+  width: 0;
+  border-radius: 20px;
+  transition: width .4s ease;
+}
+
+.goal-status {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #A4A8B4;
+  line-height: 1.5;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dashboard-cards .card {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.recent-card,
+.goal-card {
+    min-height: 200px;
+}
+
+/* Recent Activity */
+
+#recent-sessions {
+  margin-top: 12px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid #2D313A;
+}
+
+.session-item:last-child {
+  border-bottom: none;
+}
+
+.session-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.session-subject {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.session-date {
+  font-size: 13px;
+  color: #9CA3AF;
+}
+
+.session-duration {
+  font-weight: 600;
+  color: #F5F5F5;
+  white-space: nowrap;
+}
+
+.empty-state {
+  color: #9CA3AF;
+  margin-top: 10px;
+}
