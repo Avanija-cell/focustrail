@@ -11,7 +11,7 @@ const pauseBtn = document.getElementById("pause-timer-btn");
 const resetBtn = document.getElementById("reset-timer-btn");
 const subjectSelect = document.getElementById("subject-select");
 
-// Converts raw seconds (e.g. 1500) into "25:00" format for display
+// Format for display
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
@@ -24,7 +24,7 @@ function updateDisplay() {
 
 function startTimer() {
   if (isRunning) 
-    return; // prevent multiple intervals stacking if Start is clicked twice
+    return; // prevent multiple timers
   
   isRunning = true;
 
@@ -82,7 +82,7 @@ function onSessionComplete() {
     resetTimer();
 }
 
-// Connect buttons to their functions
+// Connect buttons
 startBtn.addEventListener("click", startTimer);
 pauseBtn.addEventListener("click", pauseTimer);
 resetBtn.addEventListener("click", resetTimer);
@@ -96,4 +96,4 @@ function updateButtonStates() {
 
 updateDisplay();
 updateButtonStates();
- // show 25:00 immediately when page loads
+ // Initialize timer - show 25:00 immediately when page loads

@@ -1,8 +1,4 @@
-// dashboard.js
-// Reads data from storage.js and updates the dashboard's numbers on screen.
-// This file does NOT store or calculate raw data logic beyond simple display math —
-// it just reads and renders.
-
+// Reads data from storage.js and updates dashboard values
 
 function getGreeting() {
   const hour = new Date().getHours();
@@ -27,7 +23,7 @@ function renderDashboard() {
   const today = formatLocalDate(new Date()); 
   document.querySelector(".greeting").textContent = getGreeting();
 
-  // ---- Today's Study Time ----
+  // Today's Study Time
   const todaysSessions = data.sessions.filter(session => session.date === today);
   const todaysTotalMinutes = todaysSessions.reduce((sum, session) => sum + session.duration, 0);
 
@@ -36,8 +32,7 @@ function renderDashboard() {
 
   document.getElementById("today-value").textContent = `${hours} hr ${minutes} min`;
 
-// ---- Today's Goal ----
-
+// Today's Goal
 const dailyGoalMinutes = 120;
 
 document.getElementById("daily-goal-fill").style.width =
@@ -64,7 +59,7 @@ if (todaysTotalMinutes === 0) {
 
 document.querySelector(".goal-status").textContent = goalMessage;
 
-  // ---- Weekly Goal Progress ----
+  // Weekly Goal Progress
   const weekAgo = new Date();
   weekAgo.setDate(weekAgo.getDate() - 7);
 
@@ -83,20 +78,18 @@ document.querySelector(".goal-status").textContent = goalMessage;
  document.getElementById("streak-value").textContent = `${currentStreak} Days`;
 }
 
-// Calculates the current consecutive-day streak, counting backward from today.
+// Calculates current streak
 function calculateCurrentStreak(sessions) {
   const studiedDates = new Set(sessions.map(session => session.date));
 
   let streak = 0;
-  let cursor = new Date(); // start checking from today
+  let cursor = new Date();
 
-  // If today has no session yet, don't kill the streak immediately —
-  // just start counting from yesterday instead (streak stays "alive" until end of day).
   if (!studiedDates.has(formatLocalDate(cursor))) {
     cursor.setDate(cursor.getDate() - 1);
   }
 
-  // Walk backward one day at a time, counting while each day has a session
+  // Counting consecutive study days
   while (studiedDates.has(formatLocalDate(cursor))) {
     streak++;
     cursor.setDate(cursor.getDate() - 1);
@@ -105,4 +98,4 @@ function calculateCurrentStreak(sessions) {
   return streak;
 }
 
-renderDashboard(); // run once immediately when the page loads
+renderDashboard(); // Initial render

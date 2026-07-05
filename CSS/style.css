@@ -123,32 +123,22 @@ h3 {
 .reset-data-btn {
 
   position: fixed;
-
   bottom: 24px;
-  right: 24px;
-
+  left: 24px;
   padding: 10px 18px;
-
   background: #22252D;
   color: #E587A4;
-
   border: 1px solid #313640;
   border-radius: 10px;
-
   font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
-
   cursor: pointer;
-
   transition: .2s;
-
 }
 
 .reset-data-btn:hover {
 
   background: #2B2F39;
-
   border-color: #E587A4;
-
 }

@@ -1,4 +1,4 @@
-// Shows latest completed sessions.
+// Shows recent study sessions
 
 function formatSessionDate(dateString) {
 
@@ -14,9 +14,7 @@ function formatSessionDate(dateString) {
 
   if (dateString === yesterdayString) return "Yesterday";
 
-  // dateString is already "YYYY-MM-DD" from storage — build a local Date
-  // from its parts instead of new Date(dateString), which parses as UTC
-  // and can shift the day backward depending on timezone
+  // build local date from parts to avoid UTC parsing shifting the day
   const [year, month, day] = dateString.split("-").map(Number);
   const localDate = new Date(year, month - 1, day);
 

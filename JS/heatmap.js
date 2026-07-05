@@ -1,9 +1,7 @@
-// heatmap.js
-// Builds a GitHub-style contribution heatmap from stored sessions.
+// Building a contribution monthly calendar from stored sessions
 
 
-// Builds a lookup: { "2026-07-01": 45, "2026-07-02": 30, ... }
-// total minutes studied per date, combining all sessions on the same day
+// Total study time for day
 function buildMinutesPerDay(sessions) {
   const totals = {};
 
@@ -17,7 +15,7 @@ function buildMinutesPerDay(sessions) {
   return totals;
 }
 
-// Decides which color "level" a day falls into, based on minutes studied
+// Decides color "level"
 function getIntensityLevel(minutes) {
   if (minutes <= 0) return 0;
   if (minutes < 30) return 1;
